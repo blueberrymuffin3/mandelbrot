@@ -53,9 +53,10 @@ uint8_t getPixelColor(uint24_t _x, uint8_t _y){
 
 void run() {
     for(x = 0; x < 320; x++){
-        for(y = 0; y < 240; y++){
+        for(y = 0; y < 120; y++){
             gfx_SetColor(getPixelColor(x, y));
             gfx_SetPixel(x, y);
+            gfx_SetPixel(x, 240 - y);
         }
         if(isClearPressed()){
             return;
